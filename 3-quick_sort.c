@@ -18,12 +18,11 @@ void swap(int *a, int *b)
  * partition: partitions the array for quick sort by
  *		using the Lomuto scheme.
  *
- * @array: array to the partition.
+ * @array: array to partition.
  * @low: starting index of the partition.
- * @high: ending indec of the partition.
- * @size: size fo the array (used for printing).
+ * @high: ending index of the partition.
  *
- * Return: the index where the pivor element is placed.
+ * Return: the index where the pivot element is placed.
  */
 
 int partition(int *array, int low, int high)
@@ -55,7 +54,6 @@ int partition(int *array, int low, int high)
  * @array: array to sort.
  * @low: starting index of array.
  * @high: ending index of array.
- * @size: size of array.
  */
 
 void quick_sort_recursive(int *array, int low, int high)
@@ -69,11 +67,10 @@ void quick_sort_recursive(int *array, int low, int high)
 		quick_sort_recursive(array, low, pi - 1);
 		quick_sort_recursive(array, pi + 1, high);
 	}
-
 }
 
 /**
- * quick_sort - sorts an array of itns in ascending order.
+ * quick_sort - sorts an array of int in ascending order.
  *
  * @array: array to sort.
  * @size: size of array.

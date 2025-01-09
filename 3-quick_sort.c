@@ -26,7 +26,7 @@ void swap(int *a, int *b)
  * Return: the index where the pivor element is placed.
  */
 
-int partition(int *array, int low, int high, size_t size)
+int partition(int *array, int low, int high)
 {
 	int pivot;
 	int a, b;
@@ -41,12 +41,10 @@ int partition(int *array, int low, int high, size_t size)
 		{
 			a++;
 			swap(&array[a], &array[b]);
-			print_array(array, size);
 		}
 	}
 
 	swap(&array[a + 1], &array[high]);
-	print_array(array, size);
 
 	return (a + 1);
 }
@@ -60,16 +58,16 @@ int partition(int *array, int low, int high, size_t size)
  * @size: size of array.
  */
 
-void quick_sort_recursive(int *array, int low, int high, size_t size)
+void quick_sort_recursive(int *array, int low, int high)
 {
 	int pi;
 
 	if (low < high)
 	{
-		pi = partition(array, low, high, size);
+		pi = partition(array, low, high);
 
-		quick_sort_recursive(array, low, pi - 1, size);
-		quick_sort_recursive(array, pi + 1, high, size);
+		quick_sort_recursive(array, low, pi - 1);
+		quick_sort_recursive(array, pi + 1, high);
 	}
 
 }
@@ -86,5 +84,5 @@ void quick_sort(int *array, size_t size)
 	if (array == NULL || size < 2)
 		return;
 
-	quick_sort_recursive(array, 0, size - 1, size);
+	quick_sort_recursive(array, 0, size - 1);
 }

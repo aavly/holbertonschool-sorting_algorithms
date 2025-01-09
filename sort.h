@@ -20,6 +20,8 @@ typedef struct listint_s
     struct listint_s *next;
 } listint_t;
 
+listint_t *create_listint(const int *array, size_t size);
+
 void print_array(const int *array, size_t size);
 void print_list(const listint_t *list);
 

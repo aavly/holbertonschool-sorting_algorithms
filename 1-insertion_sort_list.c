@@ -47,7 +47,7 @@ void insertion_sort_list(listint_t **list)
 			swapNodes(list, temp->prev, temp);
 			print_list(*list);
 		}
-		
+
 		current = current->next;
 	}
 }
